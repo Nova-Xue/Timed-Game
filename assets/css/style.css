@@ -1,5 +1,9 @@
+body{
+    background-image: url(../images/backimg.jpg);
+}
 .result,
-.my-2{
+.my-2,
+.meme{
     display: none;
 
 }
