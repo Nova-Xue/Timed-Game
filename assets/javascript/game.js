@@ -205,7 +205,12 @@ $(document).ready(function () {
         let h2 = $("<h2>").text(display+" the answer is " + content[questionCount].answer);
         let img = $("<img>").attr("src", content[questionCount].meme);
         $(".meme").append(h2, img);
-        questionCount++;//next question 
+        if(questionCount<content.length){
+            questionCount++;//next question 
+        }else{
+            questionCount = 0;
+        }
+        
         memeId = setInterval(reload, 3000);
 
 
@@ -224,7 +229,6 @@ $(document).ready(function () {
         $(".result-content").append(c);
         $(".result").css("display", "block");
         isStart = false;
-        questionCount = 0;
     }
 
     function countDown() {
