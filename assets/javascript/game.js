@@ -202,17 +202,13 @@ $(document).ready(function () {
         $(".my-2").hide();
         $(".meme").css("display", "flex");
         $(".meme").text("");
-        let h2 = $("<h2>").text(display+" the answer is " + content[questionCount].answer);
+        let p = $("<p>").text(display+" the answer is " + content[questionCount].answer);
         let img = $("<img>").attr("src", content[questionCount].meme);
-        $(".meme").append(h2, img);
-        if(questionCount<content.length){
-            questionCount++;//next question 
-        }else{
-            questionCount = 0;
-        }
-        
-        memeId = setInterval(reload, 3000);
+        img.addClass("img-fluid");
+        $(".meme").append(p,img);
 
+        questionCount++;//next question 
+        memeId = setInterval(reload, 3000);
 
     }
     function loadResult() {
@@ -229,6 +225,7 @@ $(document).ready(function () {
         $(".result-content").append(c);
         $(".result").css("display", "block");
         isStart = false;
+        questionCount = 0;
     }
 
     function countDown() {
